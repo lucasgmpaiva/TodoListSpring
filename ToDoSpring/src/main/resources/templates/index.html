@@ -1,26 +1,50 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="css/bootstrap.css">
 <meta charset="UTF-8">
 <title>Lista de Tarefas</title>
 </head>
 <body>
-	<h1>Lista de Afazeres</h1>
-	<button onclick="location.href='/newtask'" type="button">Cadastrar
-		Tarefa</button>
-
-	<div th:each="task : ${tasks}">
-		<div class="row">
-			<p>
-				<span th:text="${task.name + ' : ' + task.description}">
-					<form action="#" th:action="@{'/delete/{id}'(id=${task.id})}"
-						th:method="post">
-						<button type="submit" id="submitButton">Delete</button>
-					</form>
-				</span>
-			</p>
+	<h1 class="display-3 text-center">Lista de Afazeres</h1>
+	<div class="text-center">
+		<a href="/newtask" class = "btn btn-primary">Cadastrar Tarefa</a>	
+	</div>
+	<br/>
+	<div class= "container col-8">
+		<div class="table table-hover">
+			<table class="table">
+				<thead>
+					<tr>
+						<th scope="col">Nome</th>
+						<th scope="col">Descrição</th>
+						<th scope="col"></th>
+						<th scope="col"></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="task : ${tasks}">
+						<td><p th:text="${task.name}" /></td>
+						<td><p th:text="${task.description}" /></td>
+						<td>
+							<form action="#" th:action="@{'/delete/{id}'(id=${task.id})}"
+								th:method="post">
+								<button type="submit" id="submitButton" class="btn btn-danger">Deletar</button>
+							</form>
+						</td>
+						<td>
+							<form action="#" th:action="@{'/delete/{id}'(id=${task.id})}"
+								th:method="post">
+								<button type="submit" id="submitButton" class="btn btn-primary">Editar</button>
+							</form>
+						</td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
 	</div>
 
+	<script type="text/javascript" src="js/jquery-3.5.1.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
 </body>
 </html>
