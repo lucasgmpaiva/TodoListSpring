@@ -1,0 +1,7 @@
+.requiredField:after {
+  content:"*";color:red;
+}
+
+.footerMessageRequired:before {
+  content:"*";color:red;
+}
