@@ -21,5 +21,9 @@ public class TaskService {
 	public List<Task> findAll() {
 		return taskRepository.findAll();
 	}
+	
+	public void delete(Long id) {
+		taskRepository.deleteById(id);;
+	}
 
 }

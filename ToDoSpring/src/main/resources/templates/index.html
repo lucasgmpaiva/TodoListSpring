@@ -6,13 +6,21 @@
 </head>
 <body>
 	<h1>Lista de Afazeres</h1>
-	<button onclick="location.href='/newtask'" type="button">Cadastrar Tarefa</button>
-	
+	<button onclick="location.href='/newtask'" type="button">Cadastrar
+		Tarefa</button>
+
 	<div th:each="task : ${tasks}">
 		<div class="row">
-			<p><span th:text="${task.name + ' : ' + task.description}"></span></p>
+			<p>
+				<span th:text="${task.name + ' : ' + task.description}">
+					<form action="#" th:action="@{'/delete/{id}'(id=${task.id})}"
+						th:method="post">
+						<button type="submit" id="submitButton">Delete</button>
+					</form>
+				</span>
+			</p>
 		</div>
 	</div>
-	
+
 </body>
 </html>
