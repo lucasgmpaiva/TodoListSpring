@@ -18,7 +18,7 @@ public class TaskService {
 		if (isNameUnique(task) && !task.getName().isEmpty()) {
 			taskRepository.save(task);
 		} else {
-			System.err.println("Tarefa não cadastrada devido a nome repetido.");
+			throw new RuntimeException("Erro cadastrar tarefa! Nome já existente");
 		}
 	}
 	
@@ -42,6 +42,8 @@ public class TaskService {
 		if(alreadyPresent || isNameUnique(task)) {
 			if(!task.getName().isEmpty())
 				taskRepository.save(task);
+		} else {
+			throw new RuntimeException("Erro ao atualizar tarefa! Nome já existente.");
 		}
 	}
 	
