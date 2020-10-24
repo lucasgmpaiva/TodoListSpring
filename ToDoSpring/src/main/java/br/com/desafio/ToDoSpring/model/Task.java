@@ -7,16 +7,16 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Task{
-	
+public class Task {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-	
-	@Column(nullable = false)
+
+	@Column(length = 50, nullable = false, unique = true)
 	private String name;
-	
-	@Column
+
+	@Column(length = 140)
 	private String description;
 
 	public long getId() {
@@ -42,5 +42,5 @@ public class Task{
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	
+
 }
