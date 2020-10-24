@@ -10,20 +10,39 @@ import br.com.desafio.ToDoSpring.repository.TaskRepository;
 
 @Service
 public class TaskService {
-	
+
 	@Autowired
 	private TaskRepository taskRepository;
-	
+
 	public void save(Task task) {
-		taskRepository.save(task);
+		if (isNameUnique(task)) {
+			taskRepository.save(task);
+		} else {
+			System.out.println("Tarefa não cadastrada devido a nome repetido.");
+		}
 	}
-	
+
+	private boolean isNameUnique(Task task) {
+		boolean unique = true;
+
+		List<Task> tasks = findAll();
+
+		for (Task taskIterator : tasks) {
+			if (taskIterator.getName().toLowerCase().equals(task.getName().toLowerCase())) {
+				unique = false;
+			}
+		}
+
+		return unique;
+	}
+
 	public List<Task> findAll() {
 		return taskRepository.findAll();
 	}
-	
+
 	public void delete(Long id) {
-		taskRepository.deleteById(id);;
+		taskRepository.deleteById(id);
+		;
 	}
 
 }
