@@ -25,11 +25,6 @@ public class TaskController {
 		return "index";
 	}
 	
-	@RequestMapping(value="/newtask", method=RequestMethod.GET)
-	public String newTask() {
-		return "new-task";
-	}
-	
 	@RequestMapping(value="/newtask", method=RequestMethod.POST)
 	public String newTaskSave(Task task) {
 		taskService.save(task);

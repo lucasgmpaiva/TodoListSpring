@@ -15,7 +15,7 @@ public class TaskService {
 	private TaskRepository taskRepository;
 
 	public void save(Task task) {
-		if (isNameUnique(task)) {
+		if (isNameUnique(task) && !task.getName().isEmpty()) {
 			taskRepository.save(task);
 		} else {
 			System.err.println("Tarefa não cadastrada devido a nome repetido.");
@@ -40,7 +40,8 @@ public class TaskService {
 		List<Task> tasks = findAll();
 		boolean alreadyPresent = tasks.stream().anyMatch(t -> t.getName().equals(task.getName()) && t.getId() == task.getId());
 		if(alreadyPresent || isNameUnique(task)) {
-			taskRepository.save(task);
+			if(!task.getName().isEmpty())
+				taskRepository.save(task);
 		}
 	}
 	
