@@ -18,10 +18,10 @@ public class TaskService {
 		if (isNameUnique(task)) {
 			taskRepository.save(task);
 		} else {
-			System.out.println("Tarefa não cadastrada devido a nome repetido.");
+			System.err.println("Tarefa não cadastrada devido a nome repetido.");
 		}
 	}
-
+	
 	private boolean isNameUnique(Task task) {
 		boolean unique = true;
 
@@ -35,7 +35,15 @@ public class TaskService {
 
 		return unique;
 	}
-
+	
+	public void edit(Task task) {
+		List<Task> tasks = findAll();
+		boolean alreadyPresent = tasks.stream().anyMatch(t -> t.getName().equals(task.getName()) && t.getId() == task.getId());
+		if(alreadyPresent || isNameUnique(task)) {
+			taskRepository.save(task);
+		}
+	}
+	
 	public List<Task> findAll() {
 		return taskRepository.findAll();
 	}

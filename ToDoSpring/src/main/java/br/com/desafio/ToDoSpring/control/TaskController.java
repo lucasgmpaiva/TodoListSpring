@@ -42,4 +42,10 @@ public class TaskController {
 		return "redirect:/";
 	}
 	
+	@RequestMapping(value="/edit", method=RequestMethod.POST)
+	public String editTask(Task task) {
+		taskService.edit(task);
+		return "redirect:/";
+	}
+	
 }
