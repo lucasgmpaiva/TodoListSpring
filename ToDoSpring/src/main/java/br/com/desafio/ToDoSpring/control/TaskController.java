@@ -17,8 +17,13 @@ public class TaskController {
 	}
 	
 	@RequestMapping("/")
-	public String acessarPagina() {
+	public String index() {
 		return "index";
+	}
+	
+	@RequestMapping("/newtask")
+	public String newTask() {
+		return "new-task";
 	}
 
 }
