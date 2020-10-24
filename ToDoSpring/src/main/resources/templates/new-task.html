@@ -8,13 +8,15 @@
 <body>
 	<h1>Cadastrar Tarefa</h1>
 	<form method="post">
-		<label>Nome: </label>
-		<input type="text" value="" name="name">
-		<label>Descrição: </label>
-		<input type="text" value="" name="description">
-		<button name="action" value="save" type="submit" >Salvar</button>
+		<label>Nome: </label> <input type="text" value="" name="name"
+			data-toggle="tooltip" data-placement="bottom"
+			title="Nome é obrigatório"> <label>Descrição: </label> <input
+			type="text" value="" name="description">
+		<button name="action" value="save" type="submit">Salvar</button>
 		<button onclick="location.href='/'" type="button">Cancelar</button>
 	</form>
+	<script type="text/javascript" src="js/jquery-3.5.1.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
 </body>
 
 </html>

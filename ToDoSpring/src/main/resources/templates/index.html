@@ -8,10 +8,12 @@
 <body>
 	<h1 class="display-3 text-center">Lista de Afazeres</h1>
 	<div class="text-center">
-		<a href="/newtask" class = "btn btn-primary">Cadastrar Tarefa</a>	
+		<a href="/newtask" class="btn btn-success" data-toggle="tooltip"
+			data-placement="bottom" title="Clique aqui para cadastrar uma tarefa">Cadastrar
+			Tarefa</a>
 	</div>
-	<br/>
-	<div class= "container col-8">
+	<br />
+	<div class="container col-8">
 		<div class="table table-hover">
 			<table class="table">
 				<thead>
@@ -29,13 +31,17 @@
 						<td>
 							<form action="#" th:action="@{'/delete/{id}'(id=${task.id})}"
 								th:method="post">
-								<button type="submit" id="submitButton" class="btn btn-danger">Deletar</button>
+								<button type="submit" id="submitButton" class="btn btn-danger"
+									data-toggle="tooltip" data-placement="bottom"
+									title="Clique aqui para deletar esta tarefa">Deletar</button>
 							</form>
 						</td>
 						<td>
 							<form action="#" th:action="@{'/delete/{id}'(id=${task.id})}"
 								th:method="post">
-								<button type="submit" id="submitButton" class="btn btn-primary">Editar</button>
+								<button type="submit" id="submitButton" class="btn btn-primary"
+									data-toggle="tooltip" data-placement="bottom"
+									title="Clique aqui para editar esta tarefa">Editar</button>
 							</form>
 						</td>
 					</tr>
