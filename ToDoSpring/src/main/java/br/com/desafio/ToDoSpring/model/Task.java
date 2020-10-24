@@ -1,7 +1,5 @@
 package br.com.desafio.ToDoSpring.model;
 
-import java.io.Serializable;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,7 +8,6 @@ import javax.persistence.Id;
 
 @Entity
 public class Task{
-	
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
