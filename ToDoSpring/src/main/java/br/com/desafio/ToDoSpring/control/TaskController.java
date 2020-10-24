@@ -2,6 +2,7 @@ package br.com.desafio.ToDoSpring.control;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -12,12 +13,8 @@ import br.com.desafio.ToDoSpring.service.TaskService;
 @Controller
 public class TaskController {
 	
-	private TaskService taskService;
-	
 	@Autowired
-	public TaskController(TaskService taskService) {
-		this.taskService = taskService;
-	}
+	private TaskService taskService;
 	
 	@RequestMapping("/")
 	public String index() {
