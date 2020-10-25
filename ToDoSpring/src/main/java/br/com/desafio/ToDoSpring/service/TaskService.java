@@ -18,7 +18,7 @@ public class TaskService {
 		if (isNameUnique(task) && !task.getName().isEmpty()) {
 			taskRepository.save(task);
 		} else {
-			throw new RuntimeException("Erro cadastrar tarefa! Nome já existente");
+			throw new RuntimeException("Erro ao cadastrar tarefa! Nome já existente");
 		}
 	}
 	
@@ -53,7 +53,6 @@ public class TaskService {
 
 	public void delete(Long id) {
 		taskRepository.deleteById(id);
-		;
 	}
 
 }
