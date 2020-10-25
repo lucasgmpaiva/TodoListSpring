@@ -36,3 +36,6 @@ As mudanças no arquivo de configuração devem ser as seguintes:
 4. Para garantir, realize a atualização do Maven: clique no botão direito no projeto, na aba "Maven" clique em "Update Project", selecione o projeto e confirme.
 5. No pacote principal do projeto, "br.com.desafio.ToDoSpring", clique com o botão direito no arquivo "ToDoSpringApplication.java".
 6. O programa já estará em execução. Para acessá-lo, em um navegador acesse: "localhost:8080"
+
+### Versão JSF:
+Este projeto possui uma versão em JSF disponível no repositório a seguir: https://github.com/lucasgmpaiva/TodoListJSF
