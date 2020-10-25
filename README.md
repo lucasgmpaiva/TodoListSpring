@@ -6,6 +6,9 @@ Este projeto trata-se da implementação de uma TodoList (Lista de Tarefas) por 
 
 #### Autor: Lucas Gabriel Matias Paiva
 
+### Pontos do Desafio realizados neste projeto:
+- C, D, E e F.
+
 ### Tecnologias Utilizadas
 Para a realização do projeto foram utilizadas as seguintes tecnologias:
 - Java
