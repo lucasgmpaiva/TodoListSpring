@@ -34,8 +34,8 @@ As mudanças no arquivo de configuração devem ser as seguintes:
 2. Descompacte o arquivo
 3. Na IDE Eclipse, siga o seguinte caminho: File -> Import... -> Existing Maven Projects -> Busque a pasta na qual você descompactou o arquivo -> Selecione o projeto e pressione "Finish".
 4. Para garantir, realize a atualização do Maven: clique no botão direito no projeto, na aba "Maven" clique em "Update Project", selecione o projeto e confirme.
-5. No pacote principal do projeto, "br.com.desafio.ToDoSpring", clique com o botão direito no arquivo "ToDoSpringApplication.java".
-6. O programa já estará em execução. Para acessá-lo, em um navegador acesse: "localhost:8080"
+5. No pacote principal do projeto, "br.com.desafio.ToDoSpring", clique com o botão direito no arquivo "ToDoSpringApplication.java". Na aba "Run As" selecione a opção "Java Application".
+6. O programa já estará em execução. Para acessá-lo, em um navegador acesse: "localhost:8080".
 
 ### Versão JSF:
 Este projeto possui uma versão em JSF disponível no repositório a seguir: https://github.com/lucasgmpaiva/TodoListJSF
